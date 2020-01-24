@@ -1,4 +1,4 @@
-package com.example.newslist.objects
+package com.example.newslist.repository.objects
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

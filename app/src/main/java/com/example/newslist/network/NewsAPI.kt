@@ -1,17 +1,16 @@
-package com.example.newslist.webapi
+package com.example.newslist.network
 
-import com.example.newslist.objects.Example
+import com.example.newslist.repository.objects.Example
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.http.Query
 import java.util.concurrent.TimeUnit
 
-interface RetrofitAPI {
+interface NewsAPI {
     companion object {
         val API_KEY="257177c0aecc4ca4910388be82c92233"
         val BASE_URL: String = "https://newsapi.org/v2/"
@@ -29,8 +28,8 @@ interface RetrofitAPI {
             .client(longerTimeoutClient)
             .build()
 
-        fun create(): RetrofitAPI {
-            return retrofitApiInstance.create(RetrofitAPI::class.java)
+        fun create(): NewsAPI {
+            return retrofitApiInstance.create(NewsAPI::class.java)
         }
     }
     @GET("top-headlines")

@@ -1,4 +1,4 @@
-package com.example.newslist
+package com.example.newslist.views
 
 import android.content.Context
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebView
 import androidx.fragment.app.Fragment
+import com.example.newslist.R
 
 class DetailViewFragment private constructor():Fragment() {
 
@@ -15,7 +16,7 @@ class DetailViewFragment private constructor():Fragment() {
     companion object{
         val TAG = DetailViewFragment::class.simpleName
         val URL = "url";
-        fun getInstance(url:String):DetailViewFragment{
+        fun getInstance(url:String): DetailViewFragment {
             val instance = DetailViewFragment()
             val bundle = Bundle()
             bundle.putString(URL,url)
